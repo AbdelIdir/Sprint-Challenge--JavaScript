@@ -149,6 +149,9 @@ The zoo wants to display both the scientific name and the animal name in front o
 */
 const animalNames = [];
 
+for(let i = 0; i < zooAnimals.length; i++){
+  animalNames.push(`Name: ${zooAnimals[i].animal_name}, Scientific Name: ${zooAnimals[i].scientific_name}`)
+}
 
 
 
@@ -161,6 +164,15 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 */
 
 const lowerCase = [];
+var allnames = [];
+
+for(let i = 0; i < zooAnimals.length; i++){
+  allnames.push(`Name: ${zooAnimals[i].animal_name},Scientific Namw ${zooAnimals[i].scientific_name}`)
+}
+
+
+console.log(allnames);
+
 console.log(lowerCase); 
 
 /* Request 3: .filter() 
