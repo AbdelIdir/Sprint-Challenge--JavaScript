@@ -81,49 +81,51 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
-const universities = [];
-
-
-for(let i = 0; i < graduates.length; i++){
-  universities.push(graduates[i].university); 
-}
 
 
 
-console.log(universities.sort())
+  function finduni(institute){
+    return institute["university"];
+  }
 
-/* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
+var unifinder = graduates.map(finduni);
+
+console.log(unifinder.sort());
 
 
 
-The resulting contact information should have a space between the first name and the email information like this: 
-Name email@example.com
 
-Log the result of your new array. */
+
+
+
+
+
+//The resulting contact information should have a space between the first name and the email information like this: 
+//Name email@example.com
+
+//Log the result of your new array. */
 const contactInfo = [];
 
-
-for(let i = 0; i < graduates.length; i++){
-  contactInfo.push(`${graduates[i].first_name} ${graduates[i].email}`)
-}
-
+graduates.map (function (argument) {
+  return contactInfo.push(`${argument.first_name} ${argument.email}`)
+}) 
 
 
 console.log(contactInfo);
 
 
+
+
+
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
 const uni = [];
 
-for  (let i = 0; i < graduates.length; i++){
-
-  if(graduates[i].university.includes('Uni')){
-    uni.push(graduates[i].university); 
-  }
-}
+var hasuni = graduates.filter(function(argu) {
+  return (argu.university == "uni");
+})
 
 
-console.log(uni);
+console.log(hasuni);
 
 
 // ==== ADVANCED Array Methods ====
@@ -149,12 +151,6 @@ The zoo wants to display both the scientific name and the animal name in front o
 */
 const animalNames = [];
 
-for(let i = 0; i < zooAnimals.length; i++){
-  animalNames.push(`Name: ${zooAnimals[i].animal_name}, Scientific Name: ${zooAnimals[i].scientific_name}`)
-}
-
-
-
 console.log(animalNames);
 
 /* Request 2: .map()    
@@ -166,9 +162,6 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 const lowerCase = [];
 var allnames = [];
 
-for(let i = 0; i < zooAnimals.length; i++){
-  allnames.push(`Name: ${zooAnimals[i].animal_name},Scientific Namw ${zooAnimals[i].scientific_name}`)
-}
 
 
 console.log(allnames);
