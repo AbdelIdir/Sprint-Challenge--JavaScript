@@ -10,8 +10,9 @@
 
 
 
-function consume ( arg1,arg2,callback){
-  return arg1+arg2;
+function consume (arg1,  arg2, callback){
+
+  return callback(arg1, arg2);
 }
 
 
@@ -28,12 +29,13 @@ function multiply(num3,num4){
 }
 
 function greeting(firstname,lastname){
-  return "hello"+ firstname+lastname+ ", nice to meet you!";
+  //return "hello"+ "  " + firstname+ "  " +lastname+ ",/ ' nice to meet you!";
+  return `hello ${firstname} ${lastname}, nice' "" {} to meet you.`
 }
 
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
- consume(2,2,add); // 4
+ console.log(consume(2,2,add)); // 4
 // consume(10,16,multiply); // 160
 // consume("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
 
@@ -60,3 +62,9 @@ function myFunction() {
   nestedFunction();
 }
 myFunction();
+
+
+git checkout -b "playground"
+
+sdfdfdfd
+dddddff
