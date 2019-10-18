@@ -6,23 +6,11 @@
   Create a constructor function named CuboidMaker that accepts properties for length, width, and height
 */
 
-/*
-function CuboidMaker(length, width, height) {
-  this.length = length;
-  this.width = width;
-  this.height = height;
-}
-
-CuboidMaker.prototype.volume = function() {
-  return this.length * this.width * this.height
-}
-
-
-
-const cuboid = new CuboidMaker(5, 7, 9);
-
-console.log(cuboid.volume());
-
+// function CuboidMaker  (length, width, height)  {
+//   (this.length = length),
+//    (this.width = width),
+//     (this.height = height)
+// };
 
 /* == Step 2: Volume Method ==
   Create a method using CuboidMaker's prototype that returns the volume of a given cuboid's length, width, and height
@@ -30,45 +18,27 @@ console.log(cuboid.volume());
   Formula for cuboid volume: length * width * height
 */
 
+// CuboidMaker.prototype.volume = function(length,width,height){
+
+//   return this.length * this.width * this.height
+// }
 
 /* == Step 3: Surface Area Method ==
-  Create another method using CuboidMaker's prototype that returns the surface area of a given cuboid's length, width, and height. 
+  Create another method using CuboidMaker's prototype that returns the surface area of a given cuboid's length, width, and height.
+
 
   Formula for cuboid surface area of a cube: 2 * (length * width + length * height + width * height)
 */
-
+// CuboidMaker.prototype.surfaceArea = function (length, width, height)  {
+//   return 2 * (this.length * this.width + this.length * this.height + this.width * this.height)};
 
 /* == Step 4: Create a new object that uses CuboidMaker ==
   Create a cuboid object that uses the new keyword to use our CuboidMaker constructor
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid.   
 */
 
+// const cuboid = new CuboidMaker(4, 5, 5);
+
 // Test your volume and surfaceArea methods by uncommenting the logs below:
 // console.log(cuboid.volume()); // 100
 // console.log(cuboid.surfaceArea()); // 130
-
-/*
-function Parent(name, age) {
-  //this = { name: "Idir", age: 24};
-  this.name = name;
-  this.age = age;
-  //return this;
-}
-
-function Child(name, age, toy) {
-  Parent.call(this, name, age);
-  this.toy = toy;
-}
-
-const idir = new Person('Idir', 24);
-const Max = new Child('Max', 7, 'train')
-
-class Child extends Parent{
-  constructor(name, age, toy) {
-    super(name, age)
-    this.toy = toy;
-  }
-}
-
-*/
-

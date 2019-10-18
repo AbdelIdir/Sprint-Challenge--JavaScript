@@ -1,70 +1,54 @@
-// ==== Callbacks ====  
+// // ==== Callbacks ====
 
-/* Step 1: Create a higher-order function that accepts a callback
-  * Create a higher-order function named consume that can take 3 parameters.
-  * The first two parameters can accept any argument
-  * The last parameter accepts a callback 
-  * In the body of the function return the callback with the two parameters that you created
-*/
+// /* Step 1: Create a higher-order function
+//   * Create a higher-order function named consume with 3 parameters: a, b and cb
+//   * The first two parameters can take any argument (we can pass any value as argument)
+//   * The last parameter accepts a callback
+//   * The consume function should return the invocation of cb, passing a and b into cb as arguments
+// */
 
-
-
-
-function consume (arg1,  arg2, callback){
-
-  return callback(arg1, arg2);
+const consume = (a, b , cb) => {
+  return cb(a,b);
 }
 
+// /* Step 2: Create several functions to callback with consume();
+//   * Create a function named add that returns the sum of two numbers
+//   * Create a function named multiply that returns the product of two numbers
+//   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
+// */
 
-/* Step 2: Create several functions to callback with consume();
-  * Create a function named add that returns the sum of two numbers
-  * Create a function named multiply that returns the product of two numbers 
-  * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
-*/
-function add (num1,num2){
-  return num1+num2;
+const add = (numa, numb) => {
+ return numa+numb
+};
+
+const multiply = (numa , numb) => {
+  return numa * numb
+};
+
+const greeting = (firstname, lastname) => {
+ return `Hello ${firstname} ${lastname}, nice to meet you!`
 }
-function multiply(num3,num4){
-  return num3*num4;
-}
 
-function greeting(firstname,lastname){
-  //return "hello"+ "  " + firstname+ "  " +lastname+ ",/ ' nice to meet you!";
-  return `hello ${firstname} ${lastname}, nice' "" {} to meet you.`
-}
+// /* Step 3: Check your work by un-commenting the following calls to consume(): */
+console.log(consume(2, 2, add)); // 4
+console.log(consume(10, 16, multiply)); // 160
+console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
 
+// // ==== Closures ====
 
-/* Step 3: Check your work by un-commenting the following calls to consume(): */
- console.log(consume(2,2,add)); // 4
-// consume(10,16,multiply); // 160
-// consume("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
+// // Explain in your own words why nestedfunction can access the variable internal.
 
+// // Explanation: Here nested function is the inner most function within the function named myFunction, so it can access everything outside of its own scope.So It can access variables present outside of its scope.
 
-// ==== Closures ==== 
+// const external = "I'm outside the function";
 
-// Explain in your own words why `nestedfunction()` can access the variable `internal`.
+// function myFunction() {
+//   console.log(external);
+//   const internal = "Hello! I'm inside myFunction!";
 
-// Explanation: A nested function can access all variables outside of its scope,and also those present in the global scope,and within its own closure,within the fucntion scope.
-
-//So here a function outside of nestedfunction scope cannot access any variables within nestedfunction.But this nested function can access variables outside of its scope.In according with the closure rules.
-// both variables external and internal can be accessed by nested function/
-
-
-const external = "I'm outside the function";
-
-function myFunction() {
-  console.log(external);
-  const internal = "Hello! I'm inside myFunction!";
-
-  function nestedFunction() {
-    console.log(internal);
-  };
-  nestedFunction();
-}
-myFunction();
-
-
-git checkout -b "playground"
-
-sdfdfdfd
-dddddff
+//   function nestedFunction() {
+//     console.log(internal);
+//   };
+//   nestedFunction();
+// }
+// myFunction();
